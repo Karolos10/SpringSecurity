@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 public class SecurityConfig {
 
     //Configuration One
-    /*@Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .authorizeHttpRequests()
@@ -24,11 +24,13 @@ public class SecurityConfig {
                 .and()
                 .formLogin().permitAll()
                 .and()
+                .httpBasic()
+                .and()
                 .build();
-    }*/
+    }
 
     //Configuration Two
-    @Bean
+    /*@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .authorizeHttpRequests(auth -> {
@@ -50,7 +52,7 @@ public class SecurityConfig {
                     .migrateSession() // migrateSession, newSession, none
                 .and()
                 .build();
-    }
+    }*/
 
     @Bean
     public SessionRegistry sessionRegistry(){
